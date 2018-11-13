@@ -22,6 +22,7 @@ module.exports = class MenuController {
    main() {
       console.log(`Welcome to AddressBloc!`);
       inquirer.prompt(this.mainMenuQuestions).then((response) => {
+         console.log(JSON.stringify(response));
          switch(response.mainMenuChoice) {
             case 'Add new contact':
                this.addContact();
@@ -53,15 +54,18 @@ module.exports = class MenuController {
    }
 
    getDate() {
-      this.clear();
+      // this.clear();
       console.log(this.date);
       this.main();
    }
-
 
    exit() {
       console.log('Thanks for using AddressBloc!');
       // end program
       process.exit();
+   }
+
+   getContactCount() {
+      return this.contacts.length;
    }
 }
