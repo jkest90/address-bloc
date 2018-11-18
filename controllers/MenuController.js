@@ -9,7 +9,7 @@ module.exports = class MenuController {
             message: 'Please choose from an option below: ',
             choices: [
                'Add new contact',
-               'Exit'
+               'Exit',
                'Get date'
             ]
          }
@@ -54,7 +54,7 @@ module.exports = class MenuController {
    }
 
    getDate() {
-      // this.clear();
+      this.clear();
       console.log(this.date);
       this.main();
    }
@@ -67,5 +67,9 @@ module.exports = class MenuController {
 
    getContactCount() {
       return this.contacts.length;
+   }
+
+   remindMe() {
+      return 'Learning is a life-long pursuit';
    }
 }
