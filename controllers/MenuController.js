@@ -47,7 +47,7 @@ module.exports = class MenuController {
    clear() {
       console.log('\x1Bc');
    }
-   
+
    getDate() {
       this.clear();
       console.log(this.date);
@@ -79,6 +79,5 @@ module.exports = class MenuController {
             this.main();
          });
       });
-      this.main();
    }
 }
