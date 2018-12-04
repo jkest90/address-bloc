@@ -1,19 +1,19 @@
 {
-  "name": "address-bloc",
-  "version": "1.0.0",
-  "description": "An application to model an address book in Node.",
-  "main": "app.js",
-  "scripts": {
-    "test": "export NODE_ENV=test && jasmine"
-  },
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "jasmine": "^3.1.0"
-  },
-  "dependencies": {
-    "pg": "^7.4.1",
-    "pg-hstore": "^2.3.2",
-    "sequelize": "^4.32.6"
-  }
+   "name": "address-bloc",
+   "version": "1.0.0",
+   "description": "An application to model an address book in Node.",
+   "main": "app.js",
+   "scripts": {
+      "test": "export NODE_ENV=test && jasmine"
+   },
+   "author": "",
+   "license": "ISC",
+   "devDependencies": {
+      "jasmine": "^3.1.0"
+   },
+   "dependencies": {
+      "pg": "^7.4.1",
+      "pg-hstore": "^2.3.2",
+      "sequelize": "^4.32.6"
+   }
 }

@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const ContactController = require('./ContactController');
 
 module.exports = class MenuController {
    constructor() {
@@ -14,7 +15,7 @@ module.exports = class MenuController {
             ]
          }
       ];
-      this.contacts = [];
+      this.book = new ContactController();
       this.date = new Date();
 
    }
@@ -46,13 +47,7 @@ module.exports = class MenuController {
    clear() {
       console.log('\x1Bc');
    }
-
-   addContact() {
-      this.clear();
-      console.log('addContact called');
-      this.main();
-   }
-
+   
    getDate() {
       this.clear();
       console.log(this.date);
@@ -71,5 +66,19 @@ module.exports = class MenuController {
 
    remindMe() {
       return 'Learning is a life-long pursuit';
+   }
+
+   addContact() {
+      this.clear();
+      inquirer.prompt(this.book.addContactQuestions).then((answers) => {
+         this.book.addContact(answers.name, answers.phone).then((contact) => {
+            console.log("Contact added successully!");
+            this.main();
+         }).catch((err) => {
+            console.log(err);
+            this.main();
+         });
+      });
+      this.main();
    }
 }
