@@ -22,14 +22,22 @@ module.exports = class ContactController {
             validate(val) {
                return val !== "";
             }
+         },
+         {
+            type: "input",
+            name: "email",
+            message: "Contact's e-mail - ",
+            validate(val) {
+               return val !== "";
+            }
          }
       ];
    }
 
    // POST to the database
-   addContact(name, phone) {
+   addContact(name, phone, email) {
       // interacts with DB. rerturns an async Sequelize promise that must be resolved in our test using .then().
-      return Contact.create({name, phone});
+      return Contact.create({name, phone, email});
    }
 
  }
